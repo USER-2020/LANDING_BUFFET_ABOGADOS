@@ -1,0 +1,32 @@
+.attorneys{border-top:1px solid var(--line)}
+.attorney-viewport{--cards-visible:2;--card-gap:22px;overflow:hidden;padding:6px;margin:-6px;touch-action:pan-y}
+.attorney-track{display:flex;gap:var(--card-gap);will-change:transform}
+.attorney-track.is-moving{transition:transform 650ms cubic-bezier(.22,.68,.25,1)}
+.attorney-track>.attorney-card{flex:0 0 calc((100% - var(--card-gap)) / 2)}
+.attorney-indicators{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:24px}
+.attorney-indicators button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:transparent}
+.attorney-indicators button span{display:block;width:9px;height:9px;border-radius:99px;background:#cfc7b8;transition:width .25s,background .25s}
+.attorney-indicators button:hover span{background:#96723a}
+.attorney-indicators button[aria-current=true] span{width:28px;background:#ba944f}
+.attorney-card{display:flex;flex-direction:column;min-width:0;padding:30px;background:#fcfaf6;border:1px solid var(--line);border-top:3px solid #ba944f;border-radius:2px}
+.attorney-identity{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}
+.attorney-monogram{display:grid;place-items:center;width:66px;height:66px;border:1px solid #d8b56860;border-radius:50%;background:#102236;color:#ead39b;font-family:var(--font-display);font-size:30px}
+.attorney-license{font-size:10px;letter-spacing:.8px;color:var(--muted);text-align:right}
+.attorney-license strong{display:block;margin-top:7px;font-size:15px;font-weight:500;letter-spacing:1px;color:#102236}
+.attorney-card h3{font-size:32px;font-weight:500;line-height:1.12;margin:0 0 15px;min-height:2.24em}
+.attorney-location{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);margin:0 0 24px}
+.attorney-location svg,.attorney-details svg{flex-shrink:0;color:#96723a}
+.attorney-details{display:grid;gap:18px;padding-top:22px;border-top:1px solid var(--line);margin-bottom:28px}
+.attorney-details a{display:flex;align-items:center;gap:11px;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+.attorney-details span{min-width:0}
+.attorney-details small{display:block;font-size:10px;color:var(--muted);margin-bottom:2px}
+.attorney-details a:hover,.attorney-email:hover{color:#8b682f;text-decoration:underline;text-underline-offset:4px}
+.attorney-actions{margin-top:auto;display:flex;flex-direction:column;gap:16px;text-align:center}
+.attorney-actions .button{width:100%;justify-content:space-between;padding:15px 18px;font-size:14px}
+.attorney-email{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;min-height:44px}
+.attorney-email-pending{display:grid;place-items:center;min-height:44px;font-size:12px;color:var(--muted)}
+@media(max-width:1150px){.attorney-card{padding:24px 20px}.attorney-viewport{--card-gap:16px}.attorney-card h3{font-size:29px}}
+@media(min-width:801px) and (max-width:1050px){.nav-links{display:none;position:absolute;top:147px;left:0;right:0;background:#0a1929;z-index:10;padding:25px;border-bottom:1px solid #d0ae6740}.nav-links.is-open{display:flex;flex-direction:column;gap:24px;font-size:16px}.menu-toggle{display:block;padding:6px}.nav-cta{margin-left:auto}}
+@media(max-width:900px){.attorney-viewport{--cards-visible:1}.attorney-track>.attorney-card{flex-basis:100%}.attorney-card{padding:28px}.attorney-card h3{min-height:2.24em;font-size:34px}.attorney-actions{flex-direction:row;align-items:center;gap:24px}.attorney-actions .button{width:auto;gap:24px}}
+@media(prefers-reduced-motion:reduce){.attorney-track.is-moving{transition:none}.attorney-track{will-change:auto}}
+@media(max-width:370px){.attorney-card{padding:22px}.attorney-actions{flex-direction:column;gap:12px}.attorney-actions .button{width:100%}}

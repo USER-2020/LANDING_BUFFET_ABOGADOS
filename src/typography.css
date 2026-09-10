@@ -1,0 +1,12 @@
+:root {
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Manrope', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+body, button, nav, input, select, textarea {
+  font-family: var(--font-body);
+}
