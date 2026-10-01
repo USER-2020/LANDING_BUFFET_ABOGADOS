@@ -7,7 +7,7 @@ const attorneys = [
   { name: 'Alexander James Cooper', initials: 'AC', license: '318302', email: 'lic.alexandercooper@gmail.com', whatsapp: '16562018658', whatsappLabel: '+1 (656) 201-8658', phone: '+14043627000', phoneLabel: '+1 (404) 362-7000' },
   { name: 'Alicia Verónica Ramírez', initials: 'AR', license: '283642', email: 'lawramirezveronica@gmail.com', whatsapp: '15642225649', whatsappLabel: '+1 (564) 222-5649', phone: '+15642225649', phoneLabel: '+1 (564) 222-5649' },
   { name: 'Eddie Corona', initials: 'EC', license: '323623', email: null, whatsapp: '16285002679', whatsappLabel: '+1 (628) 500-2679', phone: null },
-  { name: 'Manuel O. De la cruz oris', initials: 'MC', title: 'Licenciado', location: 'Chicago, Illinois', email: 'abogadomanueldelacruz@gmail.com', whatsapp: '18033866785', whatsappLabel: '+1 (803) 386-6785', phone: '+18033866785', phoneLabel: '+1 (803) 386-6785' },
+  { name: 'Manuel E. Solis', initials: 'MS', license: '18826790', email: null, location: 'Chicago, Illinois', whatsapp: '18033866785', whatsappLabel: '+1 (803) 386-6785', phone: '+18033866785', phoneLabel: '+1 (803) 386-6785' },
 ];
 
 export default function Attorneys({ t }) {
@@ -31,7 +31,7 @@ export default function Attorneys({ t }) {
         </div>
         <div className="attorney-actions">
           <a className="button" href={`https://wa.me/${attorney.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp: ${attorney.name}`}>WhatsApp<ArrowUpRight size={18} aria-hidden="true"/></a>
-          {attorney.email ? <a className="attorney-email" href={`mailto:${attorney.email}`} aria-label={`${t('Enviar correo')}: ${attorney.name}`}><Mail size={17} aria-hidden="true"/>{t('Enviar correo')}</a> : <span className="attorney-email-pending">{t('Correo próximamente')}</span>}
+          {attorney.email ? <a className="attorney-email" href={`mailto:${attorney.email}`} aria-label={`${t('Enviar correo')}: ${attorney.name}`}><Mail size={17} aria-hidden="true"/>{t('Enviar correo')}</a> : !attorney.hideEmail && <span className="attorney-email-pending">{t('Correo próximamente')}</span>}
         </div>
       </article>)}
     </div>
